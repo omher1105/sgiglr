@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,16 +22,7 @@
     </script>
 </head>
 <body style="background-color: #ffffff;">
-<!-- <div class="col-12">
-		<div class="col-3 col-md-3" style="max-width: 10%;padding-left: 35px;">
-			<img src="<?php echo base_url() ?>static/img/logoInei.png" width="100%">
-		</div>
-		<div class="col-3 col-md-3"></div>
-		<div class="col-3 col-md-3"></div>
-		<div class="col-3 col-md-3" style="max-width: 35%;" align="right">
-			<img src="<?php echo base_url() ?>static/img/ods.png" width="100%">
-		</div>
-</div> -->
+
 <nav class="navbar navbar-light bg-faded" role="navigation" style="background-color: rgba(0, 48, 86,1);">
 
     <div class="collapse navbar-toggleable-xs" id="collapsing-navbar">   
@@ -47,33 +39,39 @@
 		<img src="<?php echo base_url() ?>static/img/ods.png" width="100%">
 	</div>
 </nav>
-<main class="row" style="max-width:100%;background-color: #ffffff;padding-top: 69px;padding: 76px;">
-	<div class="row">
-		<div class="col-6 col-md-6" style="max-width: 35%">
-			<img src="<?php echo base_url() ?>static/img/logo.jpeg" width="100%">
-		</div>
-		<div class="col-6 col-md-6"  style="width: 60%;">
-			<h1 style="font-size: 55px;font-weight: bold; color: #27335d;">Sistema de Gestión de Indicadores para la Gestión de Gobierno Locales y Regionales</h1>
-			<br><br>
-			<p style="font-size: 23px;" align="justify">
-				Desde el año 2002 se han venido suscribiendo los denominados “Acuerdos de Gobernabilidad” previos a las elecciones regionales y nacionales con el fin de acordar compromisos entre los candidatos y la ciudadanía , para lograr determinados objetivos de política pública orientados al Desarrollo Humano Integral de nuestro país.
-			</p>
-			<div class="row">
-				<div class="col-9 col-md-9" style="max-width: 100%">
-					<img src="<?php echo base_url() ?>static/img/books.png" width="100%">
-				</div>
-				<div class="col-3 col-md-3" align="center" style="padding-top: 2em">
-					<a href="<?php echo base_url() ?>Welcome/home" class="btn btn-primary" style="padding-top: 55px;font-size: 20px;height: 150px;width: 150px;border-radius: 50%;border: 1px solid #27335d;">
-					INGRESAR 	
-					<i class="glyphicon glyphicon-circle-arrow-right"></i>
-					</a>
+
+<main class="container" class="row" style="max-width:100%;background-color: #ffffff;padding: 28px;">
+	<div class="container">
+		<h1 align="center" style="font-size: 40px;font-weight: bold; color: #27335d;">Sistema de Gestión de Indicadores para la Gestión de Gobierno Locales y Regionales</h1>
+	</div>
+	<section class="row" id="div_objetivos_ods" align="justify">
+
+		<?php foreach($dimensiones as $dimension){?>
+			<div class="col-md-12">
+				<hr>
+				<div class="col-md-2 col-xs-4">
+					<h1><?php echo $dimension['description']?></h1>
+					<!-- <div class="col-md-12"> -->
+					
+					<!-- </div>  -->
+	     		</div>
+	     		<div class="col-md-10"> 
+	     			<div class="col-md-12" align="center">
+			     		<?php foreach($objetivos as $objetivo){
+								if($dimension['id'] == $objetivo['dimension']){?>
+								<div class="col-md-2" style="max-width: 11%">
+									<a href="<?php echo base_url()?>welcome/objetivo/<?php echo $objetivo['id']?>"><img src="<?php echo base_url()?>static/img/S_SDG_Icons-01-<?php echo $objetivo['id']?>.png" width="100%"></a>
+								</div>
+						<?php }} ?>
+					</div>
 				</div>
 			</div>
-		</div>
-	</div>
-	
+		<?php } ?>
+
+	</section>
 </main>
-<div style="margin-bottom: 36px"></div>
+
+
 <footer class="footer" style="line-height: 0.3;  background-color:rgba(0, 48, 86,1);color: #fff " align="center" >
 	<br><br><br>
 	<p >Instituto Nacional de Estadistica e Informatica</p>
