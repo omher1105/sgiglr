@@ -51,7 +51,18 @@
 			    <iframe style="border-radius: 10px;border:1px solid rgba(0, 48, 86,1)" width="600" height="600" src="<?php echo base_url()?>welcome/mapa" allowfullscreen></iframe>
 			</div>
 			<div class="col-md-6">
-				<div class="col-md-6 form-group">
+				<div class="col-md-12">
+					<div class="col-md-3">
+						<div style="max-width: 80%">
+							<img src="<?php echo base_url()?>static/img/S_SDG_Icons-01-<?php echo $id ?>.png" width="100%">
+						</div>
+					</div>
+					<div class="col-md-3">
+						<h2><b><?php echo $dimensiones[0]['description'] ?></b></h2>
+					</div>
+				</div>
+
+				<div class="col-md-6 form-group" style="margin-top: 20px">
 					<label>Seleccione Departamento:</label>
 					<select class="form-control"> 
 						<option>Amazonas</option>
@@ -81,9 +92,27 @@
 						<option>Ucayali</option>
 					</select>
 				</div>
-				<div class="col-md-12">
-					<table>
-						
+				<div class="col-md-12" style="margin-top: 20px">
+					<table class="table">
+						<thead>
+							<tr>
+								<th>AMBITO</th>
+								<th>INDICADOR</th>
+								<th>VALOR</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Nacional</td>
+								<td>1.2.1</td>
+								<td>25.00</td>
+							</tr>
+							<tr>
+								<td>Departamento</td>
+								<td>1.2.1</td>
+								<td>15.00</td>
+							</tr>
+						</tbody>
 					</table>
 				</div>
 			</div>

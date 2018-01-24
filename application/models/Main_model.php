@@ -6,9 +6,14 @@ class Main_model extends CI_Model {
         parent::__construct();
     }
      
-    function dimensiones()
+    function dimensiones($id = false)
     {
-        $sql = 'select * from tb_dimensiones';
+    	if($id == false){
+    		$sql = 'select * from tb_dimensiones';
+    	}else{
+    		$sql = 'select * from tb_dimensiones where id = '.$id;
+    	}
+        
         $query = $this->db->query($sql)->result_Array();
     	return $query;
     }

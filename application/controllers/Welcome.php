@@ -36,7 +36,9 @@ class Welcome extends CI_Controller {
 	}
 
 	function objetivo($id){
-		$this->load->view('objetivo');
+		$data['dimensiones'] = $this->main_model->dimensiones($id);
+		$data['id'] = $id;
+		$this->load->view('objetivo',$data);
 	}
 
 	function mapa(){
